@@ -2,6 +2,8 @@ import express from 'express';
 const app = express()
 var router = express.Router()
 app.use(express.json())
+app.use(express.urlencoded({extended:true}));
+app.use(express.static(__dirname + 'public'));
 
 //cargo modulo handlebars 
 import handlebars from 'express-handlebars'
