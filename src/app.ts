@@ -26,6 +26,9 @@ app.use(express.static("public"))
 app.use('/api', require('./productos'))
 
 
+
+
+
 app.listen(8080 , () =>{
     console.log('Servidor listo!')
 })

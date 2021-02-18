@@ -19,8 +19,14 @@ class NuevoProducto {
 
 }
 
+
+
 router.get('/productos', (req,res) => {
     productos.length < 0 ? res.sendStatus(404) : res.send(productos)
+})
+
+router.get('/agregarProductos', (req, res)=>{
+    res.sendFile('formulario.html', {root: './public'})
 })
 
 router.get('/productos/:id',(req,res)=>{
@@ -30,12 +36,13 @@ router.get('/productos/:id',(req,res)=>{
 })
 
 router.post('/productos',(req,res) =>{
+    console.log(req.body)
     const {id,titulo, precio,imagen} = req.body
     const producto = new NuevoProducto(id,titulo,precio,imagen)
     producto.id = productos.length+1
     productos.push(producto)
-    res.sendStatus(201)
-
+    res.sendFile('formulario.html', {root: './public'})
+    
 })
 
 router.put('/productos/:id',(req,res)=>{

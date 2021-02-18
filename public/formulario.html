@@ -8,11 +8,11 @@
 </head>
 <body>
     
-    <form action="/productos" enctype="application/x-www-form-urlencoded"  method="POST">
+    <form action="/api/productos" enctype="application/x-www-form-urlencoded" method="POST">
 
-        <input class="titulo" type="text"   placeholder="Ingresa un titulo">
-        <input class="precio" type="number" placeholder="Ingresa un precio">
-        <input class="foto"   type="text"   placeholder="Ingresa el link de una imagen">
+        <input name="titulo"  type="text"   placeholder="Ingresa un titulo">
+        <input name="precio"   type="number" placeholder="Ingresa un precio">
+        <input name="imagen"   type="text" placeholder="Ingresa el link de una imagen">
         <button type="submit" class="btn btn-primary">Enviar</button>
 
     </form>
